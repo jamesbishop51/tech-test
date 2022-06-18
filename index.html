@@ -1,24 +1,27 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
-        <title>Tech Test</title>
-        
-        <link href="css/bootstrap.min.css" rel="stylesheet">        
-        <link href="css/custom.css" rel="stylesheet">
-    </head>
-    <body>
-<div class="container">
-    <label>please input the width between 750-900mm</label>
-        <input class="input-group input-group-sm mb-3" type="number" id="width" min="750" max="900" placeholder="width">
-        <label>please input the heigth between 1900-2100mm</label>
-        <input class="input-group input-group-sm mb-3" type="number" id="height" placeholder="heigth">
-        <button class="input-group input-group-sm mb-3" id="btn">click me pls</button>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title>Tech Test</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <label>please input the width between 750-900mm</label>
+            <input class="input-group input-group-sm mb-3" type="number" id="width" min="750" max="900"
+                placeholder="width">
+            <label>please input the heigth between 1900-2100mm</label>
+            <input class="input-group input-group-sm mb-3" type="number" id="height" placeholder="heigth">
+            <button type="button" class="btn btn-primary" id="btn">Submit</button>
+        </div>
         <canvas class="responsive-canvas" id="canvas" width="900" height="2100"></canvas>
-        
-</div>
-          
-        <script src="JS/script.js"></script>
-    </body>
+    </div>
+    <script src="JS/script.js"></script>
+</body>
+
 </html>
