@@ -16,7 +16,9 @@ height.addEventListener("keyup", function () {
 }, false);
 
 btn.addEventListener('click', function handleClick(event) {
+    //checks for canvas support 
     if (canvas.getContext) {
+        //checks if inputs are between the correct values
         if (width < 750 || width > 900) {
             alert("Please enter a width between 750 and 900mm");
             document.getElementById('width').value = '';
@@ -31,11 +33,9 @@ btn.addEventListener('click', function handleClick(event) {
     } else {
         alert("this appliaction uses canvas which isnt supported by your cuirrent browers")
     }
-
-
 })
-
 function draw() {
+    //draws the canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = 'white';
     ctx.strokeRect(0, 0, width, height);
