@@ -14,17 +14,21 @@ width.addEventListener("keyup", function(){
 height.addEventListener("keyup", function(){
     height=this.value;   
 }, false);
-//min width => 750, max width => 900. min height => 1900, max height => 2100
+
 btn.addEventListener('click', function handleClick(event)  {
-    if((width >= 750 && width <= 900 )&&(height >= 1900 && height <= 2100)) {
-        
-        draw();
-    }else if(width < 750 || width >900){
+    if(width < 750 || width >900){
         alert("Please enter a width between 750 and 900mm");
-        
+        document.getElementById('width').value='';
     }
-    
-},false);
+    else if(height < 1900 || height > 2100){
+        alert("Please enter a heigth between 1900 and 2100mm");
+        document.getElementById('height').value='';
+    }
+    else{
+        draw();
+    }
+
+})
 
 function draw(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
