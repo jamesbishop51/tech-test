@@ -12,14 +12,34 @@
 <body>
     <div class="container">
         <div class="row">
-            <label>please input the width between 750-900mm</label>
-            <input class="input-group input-group-sm mb-3" type="number" id="width" min="750" max="900"
+            <div class="col-6 border">
+            <label>please input the door width between 750-900mm</label>
+            <input class="input-group input-group-sm mb-3" type="number" id="doorWidth"
                 placeholder="width">
-            <label>please input the heigth between 1900-2100mm</label>
-            <input class="input-group input-group-sm mb-3" type="number" id="height" placeholder="heigth">
+            <label>please input the door heigth between 1900-2100mm</label>
+            <input class="input-group input-group-sm mb-3" type="number" id="doorHeight" placeholder="heigth">           
+            <select class="form-select" id="colourSelection" aria-label="Default select example">
+                
+                <option value="#0000FF">Blue</option>
+                <option value="#000000">Black</option>
+                <option value="#00FF00">Green</option>
+                <option value="#ff0000">red</option>
+              </select>
             <button type="button" class="btn btn-primary" id="btn">Submit</button>
+            </div>
+            <div class="col-6 border">
+                <label>please input the width for the window</label>
+                <input class="input-group input-group-sm mb-3" type="number" id="windowWidth" placeholder="width">
+                <label>please input the heigth for the Window</label>
+                <input class="input-group input-group-sm mb-3" type="number" id="windowHeight" placeholder="heigth"> 
+                <div class="slidecontainer">
+                    <input type="range" class="form-range" id="customRange1">
+                  </div>
+            </div>
+            <canvas class="responsive-canvas" id="canvas">Your browser does not support the HTML5 canvas tag.</canvas>
         </div>
-        <canvas class="responsive-canvas" id="canvas" width="900" height="2100"></canvas>
+        
+       
     </div>
     <script src="JS/script.js"></script>
 </body>
