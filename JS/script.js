@@ -43,16 +43,16 @@ btn.addEventListener('click', function handleClick(event) {
 
 function draw() {
     //draws the canvas
+    windowX.setAttribute("max",doorWidth - windowWidth)
+    windowY.setAttribute("max",doorHeight - windowHeight)
     var option = selectedColour.options[selectedColour.selectedIndex];
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     document.getElementById('canvas').width=doorWidth;
     document.getElementById('canvas').height=doorHeight;
-    ctx.fillStyle = option.value;
-    ctx.
+    ctx.fillStyle = option.value;   
     ctx.fillRect(0, 0, doorWidth, doorHeight);
     ctx.fillStyle = "blue";
-    ctx.fillRect((windowX.value - windowWidth), windowY.value, windowWidth, windowHeight);
-
+    ctx.fillRect(windowX.value, windowY.value, windowWidth, windowHeight);
     console.log(windowX.value)
     console.log(windowY.value)
 }
