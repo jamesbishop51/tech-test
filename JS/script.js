@@ -24,12 +24,14 @@ function draw() {
         alert("Please enter a heigth between 1900 and 2100mm");
         document.getElementById('doorHeight').value = '';
     }
-    else if (windowWidth.value >= doorWidth.value) {
+    else if (parseInt(windowWidth.value) >= parseInt(doorWidth.value) ) {
         alert("Window Width is bigger than door Width please re-enter");
         document.getElementById('windowWidth').value = '';
     }
-    else if (windowHeight.value >= doorHeight.value) {
+    else if (parseInt(windowHeight.value) >= parseInt(doorHeight.value0) ) {
         alert("Window Height is bigger than door Height please re-enter");
+        console.log("window" + windowHeight.value)
+        console.log("door" + doorHeight.value)
         document.getElementById('windowHeight').value = '';
     }
     else {
@@ -38,8 +40,8 @@ function draw() {
         windowY.setAttribute("max", doorHeight.value - windowHeight.value)
         var option = selectedColour.options[selectedColour.selectedIndex];
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        document.getElementById('canvas').width = doorWidth.value;
-        document.getElementById('canvas').height = doorHeight.value;
+        canvas.width = doorWidth.value;
+        canvas.height = doorHeight.value;
         ctx.fillStyle = option.value;
         ctx.fillRect(0, 0, doorWidth.value, doorHeight.value);
         ctx.fillStyle = "purple";
