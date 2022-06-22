@@ -1,13 +1,15 @@
+var canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
-var canvas = document.getElementById('canvas');
+
 var doorWidth = document.getElementById('doorWidth')
 var doorHeight = document.getElementById('doorHeight')
 var windowHeight = document.getElementById('windowHeight')
 var windowWidth = document.getElementById('windowWidth')
 var selectedColour = document.getElementById('colourSelection')
 var doorBtn = document.getElementById('btn')
-
+var windowX = document.getElementById('windowXaxis')
+var windowY = document.getElementById('windowYaxis')
 
 doorWidth.addEventListener("keyup", function () {
     doorWidth = this.value;    
@@ -21,7 +23,8 @@ windowWidth.addEventListener("keyup", function () {
 windowHeight.addEventListener("keyup", function () {
     windowHeight = this.value;
 }, false);
-
+windowX.addEventListener("change", draw, true)
+windowY.addEventListener("change", draw, true)
 
 btn.addEventListener('click', function handleClick(event) {    
         //checks if inputs are between the correct values
@@ -45,7 +48,11 @@ function draw() {
     document.getElementById('canvas').width=doorWidth;
     document.getElementById('canvas').height=doorHeight;
     ctx.fillStyle = option.value;
+    ctx.
     ctx.fillRect(0, 0, doorWidth, doorHeight);
     ctx.fillStyle = "blue";
-    ctx.fillRect((doorWidth / 2) - (windowWidth / 2), (doorHeight / 2) - (windowHeight / 2), windowWidth, windowHeight);
+    ctx.fillRect((windowX.value - windowWidth), windowY.value, windowWidth, windowHeight);
+
+    console.log(windowX.value)
+    console.log(windowY.value)
 }
